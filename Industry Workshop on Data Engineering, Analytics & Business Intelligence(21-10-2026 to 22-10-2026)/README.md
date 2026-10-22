@@ -68,20 +68,29 @@ All-Workshops/
     │   ├── Slide 45 - Tools you can start with/                  # pandas, SQL join, SQLite, notebook
     │   └── Slide 58 - Day 2 preview examples/                    # retail raw -> cleaned -> SQL -> chart
     │
-    └── Day 2 Support Material and Presentation/
-        ├── KR Mangalam Day 2 PPT for Data Analytics Workshop.pptx
-        ├── 01_Problem_Statement/                  # scenario, challenge, business questions
-        ├── 02_Bronze_Raw_Data/                    # patients, doctors, appointments, billing (6,200 rows each)
-        ├── 03_SQL/
-        │   ├── Step_01_Create_Tables/             # create bronze tables
-        │   ├── Step_02_Insert_Data/               # 100-row insert batches
-        │   └── Step_03_Clean_Transform_Gold/      # bronze -> silver -> gold
-        ├── 04_Python/
-        │   ├── clinicpulse_etl.py                 # beginner ETL script (NumPy + std library)
-        │   ├── requirements.txt
-        │   └── output/                            # generated silver & gold CSVs
-        ├── 05_Silver_Gold_Expected_Outputs/       # answer key + SQLite database
-        └── 06_Dashboard_Designs/                  # 3 dashboard layout options
+    ├── Day 2 Support Material and Presentation/
+    │   ├── KR Mangalam Day 2 PPT for Data Analytics Workshop.pptx
+    │   ├── 01_Problem_Statement/                  # scenario, challenge, business questions
+    │   ├── 02_Bronze_Raw_Data/                    # patients, doctors, appointments, billing (6,200 rows each)
+    │   ├── 03_SQL/
+    │   │   ├── Step_01_Create_Tables/             # create bronze tables
+    │   │   ├── Step_02_Insert_Data/               # 100-row insert batches
+    │   │   └── Step_03_Clean_Transform_Gold/      # bronze -> silver -> gold
+    │   ├── 04_Python/
+    │   │   ├── clinicpulse_etl.py                 # beginner ETL script (NumPy + std library)
+    │   │   ├── requirements.txt
+    │   │   └── output/                            # generated silver & gold CSVs
+    │   ├── 05_Silver_Gold_Expected_Outputs/       # answer key + SQLite database
+    │   └── 06_Dashboard_Designs/                  # 3 dashboard layout options
+    │
+    ├── data_cleaning_capstone/                    # Capstone project (see below)
+    │   ├── students_raw.csv
+    │   ├── clean_data.py
+    │   ├── students_cleaned.csv
+    │   ├── cleaning_report.txt
+    │   └── README.md
+    │
+    └── README.md                                  # this file
 ```
 
 ---
@@ -161,11 +170,50 @@ Connect Tableau to the Gold CSVs and build the dashboard using one of the layout
 
 ---
 
+## 🎓 Capstone Project – Student Records Data Cleaning & Quality Validation
+
+📁 Folder: [`data_cleaning_capstone`](./data_cleaning_capstone)
+
+After the workshop, I built a separate capstone project in **Python (pandas)** that cleans a raw, intentionally messy student dataset and validates its quality, so it is ready for reliable analysis.
+
+**Files**
+
+| File | Purpose |
+|------|---------|
+| `students_raw.csv` | Messy synthetic input (12 rows) |
+| `clean_data.py` | Reproducible cleaning script |
+| `students_cleaned.csv` | Cleaned output (generated) |
+| `cleaning_report.txt` | Summary of cleaning actions (generated) |
+
+**Cleaning workflow**
+
+1. Remove exact duplicate rows
+2. Trim spaces and standardize names, emails and categories (e.g. `M` → `Male`, `it` → `IT`)
+3. Convert age, score and attendance to numbers (e.g. remove `%`)
+4. Apply validation rules: age 16–100, score 0–100, attendance 0–100%
+5. Fill missing numeric values with the column median
+6. Validate email format and flag duplicate student IDs
+7. Export the cleaned CSV and a cleaning report
+
+**Result:** 12 rows → 11 rows (1 duplicate removed) and 3 missing values → 0, with new `Email_Valid` and `Student_ID_Duplicate` flag columns.
+
+**Run it**
+
+```bash
+cd data_cleaning_capstone
+pip install pandas
+python clean_data.py
+```
+
+> Median filling is a demonstration choice. For real data, validate the approach first.
+
+---
+
 ## 🛠️ Tech Stack
 
 | Purpose | Tools |
 |---------|-------|
-| Data cleaning & transformation | SQL (SQLite), Python (NumPy, csv) |
+| Data cleaning & transformation | SQL (SQLite), Python (NumPy, csv, pandas) |
 | Exploration | pandas, Jupyter Notebook, Excel (pivot tables & charts) |
 | Visualization | Tableau, Excel charts |
 | Concepts | ETL, Medallion Architecture (Bronze / Silver / Gold), KPIs |
