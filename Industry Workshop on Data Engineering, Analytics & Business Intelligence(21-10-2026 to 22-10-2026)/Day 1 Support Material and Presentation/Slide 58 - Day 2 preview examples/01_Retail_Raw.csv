@@ -1,0 +1,7 @@
+order_id,product,category,quantity,unit_price,customer_id,order_date
+O101,Laptop Stand,Accessories,2,550,C11,2026-10-15
+O102,USB-C Cable,Accessories,3,350,C12,2026-10-15
+O103,Wireless Mouse,Electronics,1,1200,C13,2026-10-16
+O104,Notebook,Stationery,5,110,C11,2026-10-16
+O105,Monitor,Electronics,1,8000,C14,2026-10-17
+O106,USB-C Cable,Accessories,2,350,C12,2026-10-17

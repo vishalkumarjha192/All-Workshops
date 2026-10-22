@@ -1,0 +1,7 @@
+﻿bill_id,appointment_id,amount_inr,payment_status
+B201,A101,500,paid
+B202,A102,0,void
+B203,A103,500,paid
+B204,A104,700,paid
+B205,A105,0,not charged
+B206,A106,850,pending

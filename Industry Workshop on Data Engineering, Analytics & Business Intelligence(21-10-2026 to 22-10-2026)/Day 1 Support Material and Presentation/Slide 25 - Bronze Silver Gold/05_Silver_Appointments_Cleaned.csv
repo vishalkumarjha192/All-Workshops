@@ -1,0 +1,7 @@
+﻿appointment_id,patient_id,doctor_id,appointment_date,status,charge
+A101,P01,D02,2026-10-18,completed,500
+A102,P02,D01,2026-10-18,cancelled,0
+A103,P03,D02,2026-10-19,completed,500
+A104,P04,D03,2026-10-19,completed,700
+A105,P05,D01,2026-10-20,no-show,0
+A106,P02,D01,2026-10-20,completed,850

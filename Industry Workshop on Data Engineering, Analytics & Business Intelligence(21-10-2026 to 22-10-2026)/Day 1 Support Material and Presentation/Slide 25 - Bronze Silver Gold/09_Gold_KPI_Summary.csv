@@ -1,0 +1,9 @@
+﻿metric,value
+Total valid appointments,6
+Completed,4
+Cancelled,1
+No-show,1
+Completion rate (%),66.7
+Total charges (INR),2550
+Paid charges (INR),1700
+Pending charges (INR),850

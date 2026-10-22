@@ -1,0 +1,3 @@
+﻿appointment_id,issue,action
+A106,Duplicate appointment ID,Second occurrence of A106
+A107,Incomplete / inconsistent record,Missing patient_id; status done not in allowed list
