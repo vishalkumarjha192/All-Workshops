@@ -232,7 +232,6 @@ python clean_data.py
 ## 👤 Author
 
 **Vishal Kumar Jha**
-Frontend Developer & UI/UX Designer
 🔗 [GitHub – @vishalkumarjha192](https://github.com/vishalkumarjha192)
 
 ---
